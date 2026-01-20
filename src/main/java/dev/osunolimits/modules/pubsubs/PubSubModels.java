@@ -60,9 +60,16 @@ public class PubSubModels {
         public String country;
     }
 
-    @Data 
+    @Data
     public static class NameChangeInput {
         public int id;
         public String name;
+    }
+
+    @Data
+    public static class PPUpdateMessage {
+        public int user_id;
+        public int mode;
+        public int pp;
     }
 }

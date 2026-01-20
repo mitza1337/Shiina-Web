@@ -34,6 +34,7 @@ import dev.osunolimits.modules.utils.GroupRegistry;
 import dev.osunolimits.modules.utils.ShiinaAchievementsSorter;
 import dev.osunolimits.modules.utils.ThemeLoader;
 import dev.osunolimits.modules.utils.UserInfoCache;
+import dev.osunolimits.modules.pubsubs.PPUpdateSubscriber;
 import dev.osunolimits.plugins.PluginLoader;
 import dev.osunolimits.plugins.ShiinaRegistry;
 import dev.osunolimits.routes.ap.api.PubSubHandler;
@@ -172,6 +173,7 @@ public class App {
         StartupTaskRunner.register(new StartupLogConfigTask());
         StartupTaskRunner.register(new StartupDatabaseTask());
         StartupTaskRunner.register(new StartupSetupRedisTask());
+        PPUpdateSubscriber.start();
         StartupTaskRunner.register(new AutorunSQLTask());
 
         StartupTaskRunner.register(new StartupInitCustomizations());
